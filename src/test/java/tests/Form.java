@@ -23,6 +23,7 @@ public class Form {
     static void beforeAll () {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
+        Configuration.headless = false;
     }
 
     @Test
@@ -47,10 +48,10 @@ public class Form {
         $(By.className("react-datepicker__month-select")).selectOptionByValue("4");
         $(byText("18")).click();
 
-       // $(By.className("subjects-auto-complete__control css-yk16xz-control")).setValue("Histor");
-       // $(byText("History")).click();
-      //  $("[id=subjectsContainer]").setValue("Maths");
-      //  $(byText("Maths")).click();
+        $x("//*[@id=\"subjectsContainer\"]").setValue("Histor");
+        $(byText("History")).click();
+        $("[id=subjectsContainer]").setValue("Maths");
+        $(byText("Maths")).click();
 
         $(byText("Sports")).click();
         $(byText("Reading")).click();
